@@ -4,8 +4,8 @@ object Config {
     private val config = ConfigFactory.load("secrets.properties")
 
     val airtableBaseName = config.getString("airtable.baseid") ?: throw RuntimeException("Cannot get Airtable base name")
-    val airtableUsersTable =
-        config.getString("airtable.tableid.users") ?: throw RuntimeException("Cannot get Airtable table name")
+    val airtablePersonsTable =
+        config.getString("airtable.tableid.persons") ?: throw RuntimeException("Cannot get Airtable table name")
     val airtableScheduleTable =
         config.getString("airtable.tableid.schedule") ?: throw RuntimeException("Cannot get Airtable table name")
 
