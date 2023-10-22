@@ -6,7 +6,7 @@ import model.enums.Command
 
 val commonTransitions = mapOf(
     State.START to Transition(
-        { _ -> true },
+        { true },
         { msg, _, _ ->
             bot.sendMessage(
                 msg.chat.id.toChatId(),
@@ -18,7 +18,7 @@ val commonTransitions = mapOf(
             null to false
         },
     ),
-    State.UNEXPECTED to Transition({ _ -> true }, { msg, _, _ ->
+    State.UNEXPECTED to Transition({ true }, { msg, _, _ ->
         bot.sendMessage(
             msg.chat.id.toChatId(),
             "Что-то пошло не так, нужно начать сначала. Отправь нужную команду снова!"
